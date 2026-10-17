@@ -1,0 +1,24 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}"{% if page.url == "/" or page.url == "/index.html" %} aria-current="page"{% endif %}>
+      {% include icon.html name="fish" %}
+      <span class="brand__name">Fishers for Christ <span>Missions</span></span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__open">{% include icon.html name="menu" %}</span>
+      <span class="nav-toggle__close">{% include icon.html name="close" %}</span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        {%- for link in site.data.navigation %}
+        <li><a class="site-nav__link" href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      <a class="button button--small site-nav__cta" href="{{ '/contact/' | relative_url }}"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Get in touch</a>
+    </nav>
+  </div>
+</header>

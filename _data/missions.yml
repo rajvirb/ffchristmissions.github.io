@@ -1,0 +1,35 @@
+# Each mission appears on the Our Missions page, and the first one is
+# featured on the home page. Add a new mission by adding another entry.
+#
+#   id:        used for the in-page link, e.g. /our-missions/#pakistan-education
+#   image:     base name of an image in assets/images (640px wide versions)
+#   summary:   one or two sentences for cards
+#   body:      the full description (Markdown)
+#   scripture: optional verse shown alongside the mission
+
+- id: pakistan-education
+  title: Educating children in Pakistan
+  location: Pakistan
+  image: joined-hands
+  image_alt: "Several people stacking their hands together in the middle of a circle"
+  summary: >-
+    Every child deserves an education. Partnering with a pastor in Pakistan,
+    we provide funds to send children from families who cannot afford it to school.
+  body: |
+    Every child deserves an education. In Pakistan, there are numerous families
+    who cannot afford to send their children to school. We want to support
+    children in their educational journey, so by partnering with a pastor in
+    Pakistan, we're able to provide funds to send children to school.
+
+    We'd love for this to have a long-lasting impact on families for
+    generations to come. By supporting these children, they could go on to
+    break the cycle of poverty in their families, and even help others who need
+    help in their communities. This could have a substantial impact on even
+    more communities, all to the glory of God.
+  scripture:
+    text: >-
+      Pure religion and undefiled before God and the Father is this, To visit
+      the fatherless and widows in their affliction, and to keep himself
+      unspotted from the world.
+    reference: James 1:27
+    url: https://biblehub.com/commentaries/james/1-27.htm

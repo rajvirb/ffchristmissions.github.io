@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__about">
+      <a class="brand brand--light" href="{{ '/' | relative_url }}">
+        {% include icon.html name="fish" %}
+        <span class="brand__name">Fishers for Christ <span>Missions</span></span>
+      </a>
+      <p>A registered charity and a labour of love for the kingdom of God, serving people around the world as an extension of His love.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Footer">
+      <h2 class="site-footer__heading">Explore</h2>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {%- for link in site.data.navigation %}
+        <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Connect</h2>
+      <ul>
+        <li><a href="{{ '/contact/' | relative_url }}">{% include icon.html name="mail" %} Contact us</a></li>
+        <li><a href="{{ site.youtube_channel }}" rel="noopener">{% include icon.html name="youtube" %} YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="site-footer__base">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      <p>A registered charity</p>
+    </div>
+  </div>
+</footer>

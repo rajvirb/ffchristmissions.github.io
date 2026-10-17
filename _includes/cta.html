@@ -1,0 +1,13 @@
+{%- comment -%} Closing call to action, shared across pages. Params: title, text (optional) {%- endcomment -%}
+<section class="section cta" aria-labelledby="cta-title">
+  <div class="wrap cta__inner">
+    <div class="cta__text">
+      <h2 id="cta-title">{{ include.title | default: "Be part of this labour of love" }}</h2>
+      <p>{{ include.text | default: "Whether you'd like to support our missions, have questions about the Christian faith, or simply want to know more about who we are, we'd love to hear from you." }}</p>
+    </div>
+    <div class="cta__actions">
+      <a class="button button--light" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+      {% unless page.url == "/about-us/" %}<a class="button button--ghost-light" href="{{ '/about-us/' | relative_url }}">About us</a>{% else %}<a class="button button--ghost-light" href="{{ '/our-missions/' | relative_url }}">Our missions</a>{% endunless %}
+    </div>
+  </div>
+</section>
