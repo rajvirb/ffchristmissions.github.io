@@ -1,0 +1,13 @@
+{%- comment -%}
+  Privacy-friendly YouTube embed. Shows a local poster image and only loads
+  YouTube (from youtube-nocookie.com) once the visitor presses play. Without
+  JavaScript it is a normal link to the video on YouTube.
+{%- endcomment -%}
+{%- assign video = site.featured_video -%}
+<figure class="video">
+  <a class="video__frame" href="https://www.youtube.com/watch?v={{ video.id }}" data-video-id="{{ video.id }}" data-video-title="{{ video.title | escape }}">
+    {% include image.html name="cross-at-dawn" widths="640" width="640" height="427" alt="" sizes="(min-width: 64em) 36rem, 100vw" class="video__poster" %}
+    <span class="video__play">{% include icon.html name="play" %}<span class="visually-hidden">Play video: {{ video.title }}</span></span>
+  </a>
+  <figcaption class="video__caption">{% include icon.html name="youtube" %} Video plays from YouTube</figcaption>
+</figure>

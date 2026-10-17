@@ -1,0 +1,108 @@
+---
+layout: default
+title: "Fishers for Christ Missions"
+description: "Fishers for Christ Missions is a registered Christian charity and a labour of love, serving people around the world as an extension of God's love."
+permalink: /
+body_class: home
+---
+{%- assign mission = site.data.missions.first -%}
+
+<section class="hero" aria-labelledby="hero-title">
+  {% include image.html name="sunrise-sea" widths="640,1024,1600,2400" fallback="1600" width="1600" height="1067" alt="" class="hero__image" priority="true" %}
+  <div class="wrap hero__content">
+    <p class="eyebrow eyebrow--light">A registered Christian charity</p>
+    <h1 id="hero-title">Love in action, for the kingdom of God</h1>
+    <p class="hero__lede">We are a collective of Christians who believe in the good news of the Lord Jesus Christ, serving people around the world as an extension of God's love to all people.</p>
+    <div class="button-row">
+      <a class="button button--light" href="{{ '/our-missions/' | relative_url }}">See our missions</a>
+      <a class="button button--ghost-light" href="{{ '/testimonies/' | relative_url }}">{% include icon.html name="play" %} Watch testimonies</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="intro-title">
+  <div class="wrap intro">
+    <div class="intro__heading">
+      <p class="eyebrow">Who we are</p>
+      <h2 id="intro-title">A labour of love, shared with the world</h2>
+    </div>
+    <div class="intro__text prose">
+      <p>Fishers for Christ Missions is a registered charity, supporting those who need help around the world. Everything we do flows from the love of the Lord, and it's a mission that many people can be a part of.</p>
+      <p><a class="link-arrow" href="{{ '/about-us/' | relative_url }}">More about us {% include icon.html name="arrow" %}</a></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="pillars" role="list">
+      <li class="pillar">
+        <span class="pillar__icon">{% include icon.html name="book" %}</span>
+        <h3>Rooted in the gospel</h3>
+        <p>We believe in the good news of the gospel of the Lord Jesus Christ.</p>
+      </li>
+      <li class="pillar">
+        <span class="pillar__icon">{% include icon.html name="heart" %}</span>
+        <h3>Love that is practical</h3>
+        <p>We believe love is practical, and that's what our missions are: love in action.</p>
+      </li>
+      <li class="pillar">
+        <span class="pillar__icon">{% include icon.html name="globe" %}</span>
+        <h3>For all people</h3>
+        <p>We serve people around the world as an extension of the love of God to all people.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--sand" aria-labelledby="mission-title">
+  <div class="wrap feature">
+    <div class="feature__media">
+      {% include image.html name=mission.image widths="640" width="640" height="427" alt=mission.image_alt sizes="(min-width: 56em) 34rem, 100vw" class="rounded" %}
+    </div>
+    <div class="feature__body">
+      <p class="eyebrow">Our missions &middot; {{ mission.location }}</p>
+      <h2 id="mission-title">{{ mission.title }}</h2>
+      <p>{{ mission.summary }}</p>
+      <p>We'd love for this to have a long-lasting impact on families for generations to come, all to the glory of God.</p>
+      <div class="button-row">
+        <a class="button" href="{{ '/our-missions/' | relative_url }}#{{ mission.id }}">Read about this mission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--verse" aria-label="Scripture">
+  <div class="wrap">
+    {% include scripture.html text="And now these three remain: faith, hope and love. But the greatest of these is love." reference="1 Corinthians 13:13" class="scripture--large" %}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="testimonies-title">
+  <div class="wrap split">
+    <div class="split__text">
+      <p class="eyebrow">Testimonies</p>
+      <h2 id="testimonies-title">See what the Lord has done</h2>
+      <p>We share testimonies on YouTube about what the Lord has done in the lives of other people. Watch one here, or visit our channel to hear more stories.</p>
+      <div class="button-row">
+        <a class="button button--outline" href="{{ site.youtube_channel }}" rel="noopener">{% include icon.html name="youtube" %} Visit our YouTube channel</a>
+      </div>
+    </div>
+    <div class="split__media">
+      {% include video.html %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="faith-title">
+  <div class="wrap">
+    <div class="welcome">
+      {% include image.html name="love-your-neighbour" widths="640" width="640" height="427" alt="A man in a cap embroidered with the words 'Love your neighbour'" sizes="(min-width: 48em) 18rem, 100vw" class="welcome__image" %}
+      <div class="welcome__text">
+        <h2 id="faith-title">New to the Christian faith?</h2>
+        <p>You are welcome here. If you're exploring who Jesus is, or have questions about what Christians believe, we'd be glad to hear from you, with no pressure and no question too small.</p>
+        <a class="link-arrow" href="{{ '/contact/' | relative_url }}">Ask us a question {% include icon.html name="arrow" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}

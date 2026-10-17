@@ -1,0 +1,5 @@
+{%- comment -%} A Bible verse. Params: text, reference, url (optional), class (optional) {%- endcomment -%}
+<figure class="scripture{% if include.class %} {{ include.class }}{% endif %}">
+  <blockquote><p>{{ include.text }}</p></blockquote>
+  <figcaption>{% if include.url %}<a href="{{ include.url }}" rel="noopener">{{ include.reference }}</a>{% else %}{{ include.reference }}{% endif %}</figcaption>
+</figure>

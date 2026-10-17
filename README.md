@@ -1,66 +1,58 @@
-## You like and use this theme? Then support me. Just [paypal.me/PhlowMedia](https://www.paypal.me/PhlowMedia) :)
+# Fishers for Christ Missions website
 
-# Newsletter: Stay in Touch for Future Updates
+The website for Fishers for Christ Missions, published with GitHub Pages at
+<https://ffchristmissions.github.io>.
 
-If you are a webdesigner interested in Jekyll, the static website generator, this little newsletter is for you. I share tutorials, clever code snippets and information about my own Jekyll Themes called [*Feeling Responsive*][7] and [*Simplicity*][8]. Please don't expect weekly emails :)
+It is a small [Jekyll](https://jekyllrb.com) site that GitHub Pages builds
+automatically. There is no separate build step, database or server.
 
-[![Subscribe to Jekyll Newsletter](https://phlow.github.io/static/tinyletter_subscribe_button.png)](https://tinyletter.com/feeling-responsive)
+## Editing content
 
+| What | Where |
+| --- | --- |
+| Home page | `index.html` |
+| About, Missions, Testimonies, Contact and 404 pages | `pages/` |
+| Missions (shown on the Missions page; the first is featured on the home page) | `_data/missions.yml` |
+| Main navigation | `_data/navigation.yml` |
+| Site title, description, contact form ID, YouTube channel and featured video | `_config.yml` |
+| Header, footer and reusable pieces | `_includes/` |
+| Styles | `assets/css/main.css` (plain CSS; colours and spacing are tokens at the top) |
+| Scripts (mobile menu, video, contact form) | `assets/js/site.js` |
 
-[![Start Video](https://github.com/Phlow/feeling-responsive/blob/gh-pages/images/video-feeling-responsive-1280x720.jpg)](https://www.youtube.com/embed/3b5zCFSmVvU)
+To add a mission, copy the existing entry in `_data/missions.yml` and change it.
 
-## A Responsive Jekyll Theme: *Feeling Responsive*
+## Images
 
-Do you want to get to know *Feeling Responsive*? Than check it out first and have a look on its home at  <http://phlow.github.io/feeling-responsive/>.
+Original, full-size photos are kept in `_source_images/` (not published).
+Optimised versions live in `assets/images/` as `<name>-<width>.webp` plus a
+`.jpg` fallback, and are added to pages with `_includes/image.html`.
+To add a photo, for example at 640px wide (requires ImageMagick):
 
-To get to know *Feeling Responsive* check out all the features explained in the [documentation][1].
+```sh
+convert _source_images/photo.jpg -strip -resize 640x -quality 72 assets/images/photo-640.webp
+convert _source_images/photo.jpg -strip -resize 640x -quality 74 -interlace JPEG assets/images/photo-640.jpg
+```
 
-And what license is *Feeling Responsive* released under? [This one][2].
+## Contact form
 
+The form posts to [Formspree](https://formspree.io) (form ID `mqkoeaqb` in
+`_config.yml`). Messages arrive at the email address registered with that
+Formspree form.
 
+## Running locally
 
-## Why use this theme?
+```sh
+bundle install
+bundle exec jekyll serve
+```
 
-Feeling Responsive is heavily customizable.
+Then open <http://localhost:4000>. The `github-pages` gem keeps the local
+build identical to GitHub's.
 
-1. Language-Support :)
-2. Optimized for speed and it's responsive.
-3. Built on Foundation Framework.
-4. Six different Headers.
-5. Customizable navigation, footer,...
+## Credits
 
-**[More ›][3]**
-
-
-
-## Changelog
-
-*Feeling Responsive* is in active development. Thank you to everyone who contributed, especially [Róbert Papp][5], [Alexandra von Criegern](https://github.com/plutonik-a) and [Juan Jose Amor Iglesias](https://github.com/jjamor).
-
-**[Read Changelog ›][6]**
-
-
-
-## Video Tutorial
-
-Click the image to [watch the YouTube-Video-Tutorial][4].
-
-[![Start Video](https://github.com/Phlow/feeling-responsive/blob/gh-pages/images/video-feeling-responsive-tutorial-frontpage.jpg)](https://www.youtube.com/watch?v=rLS-BEvlEyY)
-
-
-
-
-
-
-
-
- [1]: http://phlow.github.io/feeling-responsive/documentation/
- [2]: https://github.com/Phlow/feeling-responsive/blob/gh-pages/LICENSE
- [3]: http://phlow.github.io/feeling-responsive/info/
- [4]: https://www.youtube.com/watch?v=rLS-BEvlEyY
- [5]: https://github.com/TWiStErRob
- [6]: https://phlow.github.io/feeling-responsive/changelog/
- [7]: http://phlow.github.io/feeling-responsive/
- [8]: http://phlow.github.io/simplicity/
- [9]: #
- [10]: #
+- Fonts: [Fraunces](https://github.com/undercasetype/Fraunces) and
+  [Source Sans 3](https://github.com/adobe-fonts/source-sans), self-hosted
+  under the SIL Open Font License (see `assets/fonts/`).
+- The previous "Feeling Responsive" theme files are kept, unpublished, in
+  `_archive/` for reference and can be deleted once no longer needed.

@@ -1,0 +1,57 @@
+---
+title: "Our missions"
+heading: "Love in action"
+eyebrow: "Our missions"
+lede: "We believe love is practical, and that's what our missions are. This is a mission many people can be a part of."
+description: "Our missions put love into practice, including partnering with a pastor in Pakistan to send children from families in need to school."
+permalink: /our-missions/
+---
+{%- for mission in site.data.missions %}
+<section class="section mission" id="{{ mission.id }}" aria-labelledby="{{ mission.id }}-title">
+  <div class="wrap mission__grid">
+    <div class="mission__media">
+      {% include image.html name=mission.image widths="640" width="640" height="427" alt=mission.image_alt sizes="(min-width: 56em) 26rem, 100vw" class="rounded" %}
+      {% if mission.location %}<p class="tag">{% include icon.html name="globe" %} {{ mission.location }}</p>{% endif %}
+    </div>
+    <div class="mission__body prose">
+      <h2 id="{{ mission.id }}-title">{{ mission.title }}</h2>
+      {{ mission.body | markdownify }}
+      {% if mission.scripture %}
+        {% include scripture.html text=mission.scripture.text reference=mission.scripture.reference url=mission.scripture.url %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+<section class="section section--sand">
+  <div class="wrap">
+    <div class="section-heading">
+      <p class="eyebrow">Get involved</p>
+      <h2>How you can be part of it</h2>
+      <p>Our missions are a labour of love that many people can share in.</p>
+    </div>
+    <ul class="steps" role="list">
+      <li class="step">
+        <span class="step__number" aria-hidden="true">1</span>
+        <h3>Get in touch</h3>
+        <p>Send us a message if you'd like to support our missions or learn more about them.</p>
+        <a class="link-arrow" href="{{ '/contact/' | relative_url }}">Contact us {% include icon.html name="arrow" %}</a>
+      </li>
+      <li class="step">
+        <span class="step__number" aria-hidden="true">2</span>
+        <h3>Hear the stories</h3>
+        <p>Watch testimonies of what the Lord is doing in the lives of other people.</p>
+        <a class="link-arrow" href="{{ '/testimonies/' | relative_url }}">Watch testimonies {% include icon.html name="arrow" %}</a>
+      </li>
+      <li class="step">
+        <span class="step__number" aria-hidden="true">3</span>
+        <h3>Share it</h3>
+        <p>Tell others about this work so even more people can be a part of it.</p>
+        <a class="link-arrow" href="{{ '/about-us/' | relative_url }}">About us {% include icon.html name="arrow" %}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% include cta.html title="Would you like to help?" text="If you would like to be a part of this labour of love, please get in touch. We'd be glad to tell you more." %}

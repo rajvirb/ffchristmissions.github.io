@@ -1,0 +1,20 @@
+{%- comment -%}
+  Responsive image with WebP sources and a JPEG fallback, generated into
+  assets/images as <name>-<width>.webp / .jpg (see README).
+
+  name      base file name, e.g. "sunrise-sea"
+  widths    comma-separated widths available as WebP, e.g. "640,1024,1600"
+  fallback  width of the JPEG fallback (defaults to the largest width)
+  width/height  intrinsic size, used to reserve space and prevent layout shift
+  alt       alternative text ("" for decorative images)
+  sizes     the sizes attribute (defaults to 100vw)
+  class     class for the <img>
+  priority  "true" for the main above-the-fold image; otherwise images lazy-load
+{%- endcomment -%}
+{%- assign widths = include.widths | default: "640" | split: "," -%}
+{%- assign fallback = include.fallback | default: widths.last -%}
+{%- capture base -%}/assets/images/{{ include.name }}-{%- endcapture -%}
+<picture>
+  <source type="image/webp" sizes="{{ include.sizes | default: '100vw' }}" srcset="{% for w in widths %}{{ base | append: w | append: '.webp' | relative_url }} {{ w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}">
+  <img src="{{ base | append: fallback | append: '.jpg' | relative_url }}" alt="{{ include.alt | escape }}" width="{{ include.width }}" height="{{ include.height }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.priority == "true" %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+</picture>

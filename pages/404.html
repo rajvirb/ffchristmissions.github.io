@@ -1,0 +1,18 @@
+---
+title: "Page not found"
+heading: "We couldn't find that page"
+eyebrow: "Error 404"
+lede: "The page may have moved, or the link may be mistyped. These pages might help you find your way."
+permalink: /404.html
+sitemap: false
+noindex: true
+---
+<section class="section">
+  <div class="wrap">
+    <ul class="link-list" role="list">
+      <li><a class="card card--link" href="{{ '/' | relative_url }}"><h2 class="card__title">Home</h2><p>Start again from our home page.</p><span class="card__more">Go home {% include icon.html name="arrow" %}</span></a></li>
+      <li><a class="card card--link" href="{{ '/our-missions/' | relative_url }}"><h2 class="card__title">Our missions</h2><p>See how we're putting love into action.</p><span class="card__more">See our missions {% include icon.html name="arrow" %}</span></a></li>
+      <li><a class="card card--link" href="{{ '/contact/' | relative_url }}"><h2 class="card__title">Contact us</h2><p>Can't find what you need? Ask us.</p><span class="card__more">Get in touch {% include icon.html name="arrow" %}</span></a></li>
+    </ul>
+  </div>
+</section>
