@@ -6,10 +6,10 @@
 title: "Fishers for Christ Missions"
 tagline: "Love in action, for the kingdom of God"
 description: "Fishers for Christ Missions is a registered Christian charity and a labour of love, serving people around the world as an extension of God's love."
-url: "https://ffchristmissions.github.io"
-# Leave empty for a user/organisation site. If the site ever moves to a
-# project URL (e.g. /my-project), set it here; every link uses relative_url.
-baseurl: ""
+# `url` and `baseurl` are deliberately not set: GitHub Pages fills them in
+# from wherever the site is published (user site, project sub-folder such as
+# /ffchristmissions.github.io, or a custom domain). Every link uses
+# relative_url, so the site works at any of these addresses.
 lang: en-GB
 locale: en_GB
 # No GitHub Pages theme: the site has its own layouts and styles

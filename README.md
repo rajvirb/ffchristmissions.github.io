@@ -1,7 +1,11 @@
 # Fishers for Christ Missions website
 
 The website for Fishers for Christ Missions, published with GitHub Pages at
-<https://ffchristmissions.github.io>.
+<https://rajvirb.github.io/ffchristmissions.github.io/>.
+
+The site's address is not hard-coded: GitHub Pages supplies it when it builds
+the site, so it keeps working if the repository is renamed, moved, or given a
+custom domain.
 
 It is a small [Jekyll](https://jekyllrb.com) site that GitHub Pages builds
 automatically. There is no separate build step, database or server.
